@@ -1,0 +1,6 @@
+Algorithm,Size,Time
+MergeSort,1000,0
+MergeSort,2000,3434
+MergeSort,3000,3014
+MergeSort,4000,0
+MergeSort,5000,5075
