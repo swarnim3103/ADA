@@ -45,6 +45,7 @@ void print(vector <int> &d,int k){
     for(int i=0;i<k;i++){
         cout<<p[i]+1<<" ";
     }
+    cout<<endl;
 }
 
 int main(){
