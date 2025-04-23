@@ -1,66 +1,113 @@
 #include<iostream>
 #include<vector>
+#include<climits>
 using namespace std;
 
+void swap(int &a,int &b){
+	int temp = b;
+	b= a;
+	a= temp;
+}
+
 int find(int u,vector<int> &p){
-    while(p[u]>0){
-        u=p[u];
+    while (p[u]>0){
+        u = p[u];
     }
     return u;
+
 }
-void union1(int u,int v,vector<int> &p){
+void unions(int u,int v,vector<int> &p){
     p[u]=v;
 }
 
-void heapify(vector<vector<int>>&cost, int i, int n){
-    int l=2*i+1;
-    int r=2*i+2;
-    int largest=i;
-    if(l<n && cost[l][0]<cost[largest][0]){
-        largest=l;
+
+
+vector<int> MinEdge(vector<vector<int>> &cost, int &u, int &v, int n) {
+    int minEdge = INT_MAX;
+    u = -1;
+    v = -1;
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (cost[i][j] != 0 && cost[i][j] < minEdge) {
+                minEdge = cost[i][j];
+                u = i;
+                v = j;
+            }
+        }
     }
-    if(r<n && cost[r][0]<cost[largest][0]){
-        largest=r;
+    if (u != -1 && v != -1) {
+        cost[u][v] = cost[v][u] = INT_MAX; 
     }
-    if(largest!=i){
-        swap(cost[i],cost[largest]);
-        heapify(cost,largest,n);
-    }
+    vector<int> edge(2);
+    edge[0] = u;
+    edge[1] = v;
+
+    return edge;
 }
 
-void min_heap(vector<vector<int>>&cost, int n){
-    for(int i=n/2-1;i>=0;i--){
-        heapify(cost,i,n);
+int kruskal(vector<vector<int>> &cost,vector<vector<int>> &dig,int n,vector<vector<int>> &t){
+    // cout<<1;
+    vector<int> p(n);
+    for(int i=0;i<n;i++){
+        p[i]=-1;
     }
-}
-void kruskal(vector<vector<int>>&cost,int n){
-    vector<int> p(n+1,-1);
-    vector<vector<int>> ans;
-    min_heap(cost,n);
-    for(int i=0;i<n-1;i++){
-        int u=find(cost[0][1],p);
-        int v=find(cost[0][2],p);
-        if(u!=v){
-            ans.push_back(cost[0]);
-            union1(u,v,p);
+    // cout<<2;
+    int minCost = 0;
+    int j=0;
+    vector<int> edge(2);
+    // cout<<3;
+    while(j<n-1){
+        int u,v;
+        // cout<<4;
+        edge = MinEdge(cost, u, v, n);
+        // cout<<5;
+        u=edge[0];
+        v=edge[1];
+        // cout<<6;
+        int k=find(u,p);
+        int l=find(v,p);
+        // cout<<7;
+        if(k!=l){
+            t[j][0]=u;
+            t[j][1]=v;
+            j++;
+            unions(k,l,p);
+            minCost+=dig[u][v];
         }
-        cost[0]=cost[n-1-i];
-        heapify(cost,0,n-i-1);
+        // cout<<8;
     }
-    cout<<"The edges in the minimum spanning tree are:\n";
-    for(auto i:ans){
-        cout<<i[1]<<" "<<i[2]<<" "<<i[0]<<"\n";
+    // cout<<9;
+    if(j!=n-1){
+        cout<<"No MST possible"<<endl;
+        return -1;
+    }else{
+        // cout<<10;
+        return minCost;
     }
+    
 }
+
 int main(){
-    int n,m;
-    cout<<"Enter the number of edges and vertices:\n";
-    cin>>m>>n;
-    vector<vector<int>> cost(m,vector<int>(3));
-    cout<<"Enter the edges with their weights:\n";
-    for(int i=0;i<m;i++){
-        cin>>cost[i][1]>>cost[i][2]>>cost[i][0];
+    int n;
+    cout<<"Enter the number of vertices:\n";
+    cin>>n;
+    vector<vector<int>> cost(n,vector<int>(n,0));
+    vector<vector<int>> dig(n,vector<int>(n,0));
+    cout<<"Enter the cost matrix:\n";
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cin>>cost[i][j];
+            dig[i][j]=cost[i][j];
+        }
+        cout<<endl;
     }
-    kruskal(cost,n);
+    vector<vector<int>> t(n,vector<int>(2,0));
+    int minCost = kruskal(cost,dig,n,t);
+    cout<<"The minimum cost is:"<<minCost<<endl;
+    cout<<"The edges in the MST are:\n";
+    for(int i=0;i<n-1;i++){
+        cout<<t[i][0]<<" "<<t[i][1]<<endl;
+    }
     return 0;
 }
