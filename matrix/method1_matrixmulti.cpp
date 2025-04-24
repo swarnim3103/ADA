@@ -1,3 +1,4 @@
+//physically multiply two matrices
 #include<iostream>
 using namespace std;
 

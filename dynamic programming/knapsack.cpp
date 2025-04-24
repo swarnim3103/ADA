@@ -29,30 +29,34 @@ set<pair<int,int>> mergePurge(set <pair<int,int>>&s1,set<pair<int,int>>&s2,int n
     // cout<<14;
     auto k=s3.begin();
     auto l=k;
+    l++;
     //purging the set
     while (l != s3.end()) {
         cout<<14;
-        l++;
+        
         if (k->second > l->second) {
-            s3.erase(k);
+            k = s3.erase(k);
         } else {
-            k++;
+            ++k;
         }
+        ++l;
     }
     // cout<<15;
     auto y=s3.begin();
     while (y != s3.end()) {
         cout<<15;
         if (y->second > W) {
-           s3.erase(y);
+          y = s3.erase(y);
         }
-        y++;
+        else{
+            ++y;
+        }
     }
    return s3;
 }
 
 void knapsack(int n,vector<int>&wt,vector<int>&p,int W){
-   vector< set<pair<int,int>>>s(n),s1(n);
+   vector< set<pair<int,int>>>s(n),s1(n-1);
    s[0].insert({0,0});
    //making the s1[n] set and s[n] set
    //    cout<<1;
