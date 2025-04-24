@@ -6,7 +6,7 @@ void print(vector<vector<char>> &b, string &s, int i, int j) {
     if (i == 0 || j == 0) return;
     if (b[i][j] == 'D') {
         print(b, s, i - 1, j - 1);
-        cout << s[i - 1] << " ";
+        cout<<s[i-1]<<" ";
     } else if (b[i][j] == 'U') {
         print(b, s, i - 1, j);
     } else {
