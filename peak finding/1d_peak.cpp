@@ -18,7 +18,7 @@ int main() {
   for (int i = 0; i < n; i++) {
     cin >> a[i];
   }
-  int y= a[peak(a, 0, n - 1, n)];
+  int y= a[peak(a, n, 0, n-1)];
 cout<<"peak is "<<y;
   return 0;
 }

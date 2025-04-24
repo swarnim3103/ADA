@@ -1,4 +1,4 @@
-//use Strassen's algorithm to multiply two matrices
+//use 
 //p=(a11+a22)(b11+b22)
 //q=(a21+a22)b11
 //r=a11(b12-b22)
