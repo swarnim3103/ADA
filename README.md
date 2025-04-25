@@ -24,8 +24,10 @@
 
 
 ###  Backtracking
-- [x] **N-Queens Problem** – Solves the N-Queens problem using backtracking.
-- [x] **Subset Sum Problem** – Determines if there's a subset with a sum equal to a given number.
+- [ ] **N-Queens Problem** – Solves the N-Queens problem using backtracking.
+- [ ] **Subset Sum Problem** – Determines if there's a subset with a sum equal to a given number.
+- [ ] **m-color graph**
+- [ ] **Hamiltonian Cycle**
 
 ###  Sorting Algorithms
 - [x] **Merge Sort** – Implements the Merge Sort algorithm.
