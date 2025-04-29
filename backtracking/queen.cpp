@@ -1,29 +1,36 @@
 #include <iostream>
 #include <vector>
+#include <cmath>
 using namespace std;
 
-bool place(int k , int i){
-    //k ->column 
-    //i -> row
-    //kth queen is placed in ith row and kth column
-vector<int>queens(k);
-for(int j=0 ; j<k-1 ; j++){
-    if(queens[j] == i){
-        return false;
+bool Place(int k, int i, const vector<int>& x) {
+    for (int j = 0; j < k; j++) {
+        if (x[j] == i || abs(x[j] - i) == abs(j - k))
+            return false;
     }
     return true;
-} 
 }
 
-vector<int> nth(int k){
-vector<int> queens(k);
-for(int i=0 ; i<k ; i++){
-    if(place(k,i)){
-
+void NQueens(int k, int n, vector<int>& x) {
+    for (int i = 1; i <= n; i++) {
+        if (Place(k, i, x)) {
+            x[k] = i;
+            if (k == n - 1) {
+                for (int j = 0; j < n; j++)
+                    cout << x[j] << " ";
+                cout << endl;
+            } else {
+                NQueens(k + 1, n, x);
+            }
+        }
     }
 }
-    return queens;
-}
-int main(){
+
+int main() {
+    int n;
+    cout << "Enter the number of queens: ";
+    cin >> n;
+    vector<int> x(n);
+    NQueens(0, n, x);
     return 0;
 }
