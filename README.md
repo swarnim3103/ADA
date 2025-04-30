@@ -24,15 +24,28 @@
 - [x] **Prim's Algorithm** – Finds the Minimum Spanning Tree using Prim's approach.
 > - Prim’s Algorithm builds a Minimum Spanning Tree by starting from any node and repeatedly adding the smallest edge that connects a new vertex to the growing tree, until all vertices are included.
 - [x] **Kruskal's Algorithm** – Constructs the Minimum Spanning Tree using Kruskal's method.
+> - Kruskal’s Algorithm constructs a Minimum Spanning Tree by sorting all edges by weight and adding the smallest edge that doesn't form a cycle, using a disjoint-set (union-find) to manage components.
 - [x] **Dijkstra's Algorithm** – Computes the shortest path from a single source to all vertices in a graph.
+> - Dijkstra’s Algorithm computes the shortest path from a single source to all other vertices by greedily selecting the nearest unvisited vertex and updating the distances of its neighbors.
 
 ###  Dynamic Programming
 - [x] **Longest Common Subsequence (LCS)** – Computes the longest subsequence common to two sequences.
+> - Longest Common Subsequence (LCS) finds the longest sequence that appears in the same order in both strings (not necessarily contiguously), using dynamic programming to build solutions to subproblems.
 - [x] **Matrix Chain Multiplication** – Determines the most efficient way to multiply a sequence of matrices.
+> -Matrix Chain Multiplication is a dynamic programming algorithm that determines the most efficient way to multiply a sequence of matrices by choosing the optimal order of multiplication.
+> - It minimizes the total number of scalar multiplications needed by evaluating all possible parenthesizations.
 - [x] **All-Pairs Shortest Path (Floyd-Warshall)** – Finds shortest paths between all pairs of vertices in a weighted graph.
+> - Floyd-Warshall Algorithm is a dynamic programming method used to find the shortest paths between all pairs of vertices in a weighted graph.
+> - It works by considering each vertex as an intermediate point and repeatedly updating the shortest distances between every pair of nodes, even for graphs with negative edge weights (but no negative cycles).
 - [x] **0/1 Knapsack** – Solves the 0/1 Knapsack problem using dynamic programming.
+> - 0/1 Knapsack uses dynamic programming to find the maximum total value that can be carried in a knapsack without exceeding its weight capacity, where each item can be included at most once (either 0 or 1).
+> - It builds a DP table to evaluate the best value achievable for each item and capacity combination.
 - [x] **Multistage Graph (Forward Approach)** – Finds the shortest path in a multistage graph using a forward approach.
+> - Multistage Graph Shortest Path uses a forward dynamic programming approach to find the shortest path from the source to the destination in a graph divided into stages.
+> - It calculates the minimum cost from each vertex to the destination by processing stages in reverse order, ensuring the most efficient path is chosen through each stage.
 - [x] **Multistage Graph (Backward Approach)** – Determines the shortest path in a multistage graph using a backward approach.
+> - Multistage Graph (Backward Approach) finds the shortest path from source to destination by processing the graph backward, starting from the destination node.
+> - It uses dynamic programming to compute the minimum cost to reach the destination from each node by considering all possible outgoing edges stage by stage in reverse.
 
 ###  Backtracking
 - [ ] **N-Queens Problem** – Solves the N-Queens problem using backtracking.
