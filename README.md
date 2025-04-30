@@ -48,7 +48,7 @@
 > - It uses dynamic programming to compute the minimum cost to reach the destination from each node by considering all possible outgoing edges stage by stage in reverse.
 
 ###  Backtracking
-- [ ] **N-Queens Problem** – Solves the N-Queens problem using backtracking.
+- [x] **N-Queens Problem** – Solves the N-Queens problem using backtracking.
 > - The N-Queens problem is a classic backtracking challenge where you must place N queens on an N×N chessboard such that:
 > - No two queens attack each other.
 
@@ -59,13 +59,13 @@
 >    No two queens can be in the same column, and
 
 >    No two queens can be on the same diagonal.
-- [ ] **Subset Sum Problem** – Determines if there's a subset with a sum equal to a given number.
+- [x] **Subset Sum Problem** – Determines if there's a subset with a sum equal to a given number.
 > - Subset Sum Problem uses dynamic programming or backtracking to determine if there exists a subset of a given set whose sum equals a specified target value.
 > - It builds a DP table (or explores possibilities recursively) to check if the sum can be formed using some elements of the set.
-- [ ] **M-color Graph** - To determine if a graph can be colored using at most M colors such that no two adjacent vertices share the same color.
+- [x] **M-color Graph** - To determine if a graph can be colored using at most M colors such that no two adjacent vertices share the same color.
 > - Try assigning colors (1 to M) to each vertex using backtracking, ensuring no two adjacent vertices have the same color.
 > - Backtrack if a conflict occurs, and repeat until all vertices are colored or no solution exists.
-- [ ] **Hamiltonian Cycle** - To find a cycle in a graph that visits every vertex exactly once and returns to the starting vertex.
+- [x] **Hamiltonian Cycle** - To find a cycle in a graph that visits every vertex exactly once and returns to the starting vertex.
 > - Start at any vertex and use backtracking to build a path that visits every vertex exactly once.
 > - If the path forms a cycle by returning to the starting vertex, it's a Hamiltonian Cycle; otherwise, backtrack and try other paths.
 
