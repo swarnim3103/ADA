@@ -12,16 +12,27 @@
 ###  Divide and Conquer
 - [x] **Convex Hull** – Implements the Convex Hull algorithm using the Divide and Conquer approach.
 > The convex hull of a set of points is the smallest convex polygon that encloses all the points.
+> 
 > Find the point with the minimum x-coordinate (let’s call it A) and the point with the maximum x-coordinate (B).
+>
 > These two points are part of the convex hull.
+>
 > Split the remaining points into two subsets:
+>
 > Points on the left side of the line AB.
+>
 > Points on the right side of the line AB.
+>
 > For each subset, find the point P that is farthest from the line segment.
+>
 > P forms a triangle with A and B.
+>
 > Recursively repeat the process on:
+>
 > Points on the outside of triangle ABP.
+>
 > This continues until no more outside points remain.
+>
 > The remaining boundary points from each recursive call make up the convex hull.
 - [x] **Matrix Multiplication** – Performs matrix multiplication using the Divide and Conquer technique.
 - [x] **Peak Finding** – Finds a peak element in a 1D or 2D array using binary search.
