@@ -11,35 +11,18 @@
 
 ###  Divide and Conquer
 - [x] **Convex Hull** – Implements the Convex Hull algorithm using the Divide and Conquer approach.
-> - The convex hull of a set of points is the smallest convex polygon that encloses all the points.
-> 
-> - Find the point with the minimum x-coordinate (let’s call it A) and the point with the maximum x-coordinate (B).
->
-> - These two points are part of the convex hull.
->
-> - Split the remaining points into two subsets:
->
-> - Points on the left side of the line AB.
->
-> - Points on the right side of the line AB.
->
-> - For each subset, find the point P that is farthest from the line segment.
->
-> - P forms a triangle with A and B.
->
-> - Recursively repeat the process on:
->
-> - Points on the outside of triangle ABP.
->
-> - This continues until no more outside points remain.
->
-> - The remaining boundary points from each recursive call make up the convex hull.
+> - QuickHull is a divide-and-conquer algorithm that finds the convex hull by:
+> - Starting with the leftmost and rightmost points, recursively finding the farthest outer points, discarding interior ones, and combining outer points to form the convex boundary.
 - [x] **Matrix Multiplication** – Performs matrix multiplication using the Divide and Conquer technique.
+> - Matrix Multiplication (Divide and Conquer) splits two matrices into submatrices, recursively multiplies them, and combines the results to form the final product.It reduces large matrix multiplication into smaller ones for better efficiency, especially useful for large square matrices.
 - [x] **Peak Finding** – Finds a peak element in a 1D or 2D array using binary search.
-
+> - Peak Finding (1D/2D using Binary Search) locates an element that is greater than or equal to its neighbors by repeatedly dividing the array (or matrix) and checking mid elements.
+> -It uses binary search to efficiently find a peak in O(log n) (1D) or O(n log m) (2D) time.
 ###  Greedy Algorithms
 - [x] **Fractional Knapsack** – Solves the Knapsack problem allowing fractional item inclusion.
+> - Fractional Knapsack solves the knapsack problem by sorting items by value-to-weight ratio and greedily taking as much of the highest ratio items as possible — including fractions — to maximize profit.
 - [x] **Prim's Algorithm** – Finds the Minimum Spanning Tree using Prim's approach.
+> - Prim’s Algorithm builds a Minimum Spanning Tree by starting from any node and repeatedly adding the smallest edge that connects a new vertex to the growing tree, until all vertices are included.
 - [x] **Kruskal's Algorithm** – Constructs the Minimum Spanning Tree using Kruskal's method.
 - [x] **Dijkstra's Algorithm** – Computes the shortest path from a single source to all vertices in a graph.
 
