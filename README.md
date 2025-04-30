@@ -52,13 +52,13 @@
 > - The N-Queens problem is a classic backtracking challenge where you must place N queens on an N×N chessboard such that:
 > - No two queens attack each other.
 
->   -This means:
+>   - This means:
 
-No two queens can be in the same row,
+>    No two queens can be in the same row,
 
-No two queens can be in the same column, and
+>    No two queens can be in the same column, and
 
-No two queens can be on the same diagonal.
+>    No two queens can be on the same diagonal.
 - [ ] **Subset Sum Problem** – Determines if there's a subset with a sum equal to a given number.
 > - Subset Sum Problem uses dynamic programming or backtracking to determine if there exists a subset of a given set whose sum equals a specified target value.
 > - It builds a DP table (or explores possibilities recursively) to check if the sum can be formed using some elements of the set.
